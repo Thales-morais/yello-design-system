@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yello Tech — Design System</title>
+  <meta name="description" content="Design System oficial da Yello Tech. Cores, tipografia, componentes e diretrizes de marca." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
+  <style>
+    /* Overrides e detalhes inline */
+    ::selection { background: rgba(255,212,0,0.3); color: var(--color-white); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--color-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     NAV
+     ================================================ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <img src="assets/svg/logo-oficial.svg" alt="Yello Tech" class="nav-logo" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1.2rem;color:var(--accent)\'>Yello</span>'" />
+    <ul class="nav-links">
+      <li><a href="#identidade">Identidade</a></li>
+      <li><a href="#cores">Cores</a></li>
+      <li><a href="#tipografia">Tipografia</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#dash">Dash</a></li>
+      <li><a href="#componentes">Componentes</a></li>
+      <li><a href="#aplicacoes">Aplicações</a></li>
+      <li><a href="#tom">Tom de Voz</a></li>
+    </ul>
+    <span class="nav-badge">v1.0</span>
+  </div>
+</nav>
+
+<!-- ================================================
+     HERO
+     ================================================ -->
+<section class="hero" style="background: radial-gradient(ellipse at 70% 50%, rgba(255,212,0,0.05) 0%, transparent 60%);">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <i data-lucide="layers" style="width:12px;height:12px"></i>
+          Design System — v1.0
+        </div>
+        <h1 class="hero-title">
+          Inteligência<br />
+          que se <span class="highlight">vê.</span>
+        </h1>
+        <p class="hero-subtitle">
+          O sistema visual oficial da Yello Tech. Cores, tipografia, componentes e diretrizes que sustentam uma marca técnica, direta e sem ruído.
+        </p>
+        <div class="hero-ctas" style="display:flex;gap:var(--space-4);flex-wrap:wrap">
+          <a href="#identidade" class="btn btn-primary btn-lg">
+            <i data-lucide="arrow-down" style="width:16px;height:16px"></i>
+            Explorar
+          </a>
+          <a href="https://yellotech.com.br" class="btn btn-secondary btn-lg" target="_blank">
+            yellotech.com.br
+          </a>
+        </div>
+      </div>
+      <div class="hero-dash">
+        <div class="hero-dash-glow"></div>
+        <img src="assets/svg/dash-oficial.svg" alt="Dash — Mascote da Yello Tech" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ================================================
+     IDENTIDADE
+     ================================================ -->
+<section class="section" id="identidade">
+  <div class="container">
+    <p class="section-label reveal">01 — Identidade</p>
+    <h2 class="section-title reveal">Quem somos,<br />o que defendemos.</h2>
+
+    <div class="grid-3 stagger-group" style="margin-top: var(--space-12);">
+      <div class="card">
+        <div class="card-icon"><i data-lucide="eye" style="width:20px;height:20px"></i></div>
+        <div class="section-label" style="color:var(--text-muted);font-size:10px;margin-bottom:var(--space-2)">Visão</div>
+        <p class="card-title">Ser a mais confiável.</p>
+        <p class="card-text">Ser referência em implementação de inteligência operacional. Não a maior — a mais confiável no que faz.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="target" style="width:20px;height:20px"></i></div>
+        <div class="section-label" style="color:var(--text-muted);font-size:10px;margin-bottom:var(--space-2)">Missão</div>
+        <p class="card-title">Entrar. Estruturar. Evoluir.</p>
+        <p class="card-text">Implantar inteligência operacional real, integrando dados, automações e IA à operação do negócio.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="shield" style="width:20px;height:20px"></i></div>
+        <div class="section-label" style="color:var(--text-muted);font-size:10px;margin-bottom:var(--space-2)">Posição</div>
+        <p class="card-title">Não somos agência.</p>
+        <p class="card-text">Não somos consultoria, software ou "empresa de IA". Somos implementação de inteligência operacional.</p>
+      </div>
+    </div>
+
+    <div class="divider" style="margin: var(--space-12) 0;"></div>
+
+    <p class="section-label reveal">Valores — Critérios de decisão diária</p>
+    <div class="grid-2 stagger-group" style="margin-top: var(--space-8)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">⚡</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Implementação acima de discurso</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">Ideia sem execução não gera valor.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">💡</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Clareza vence complexidade</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">Se não pode ser entendido, não pode ser sustentado.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">⚙️</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Sistema &gt; Heroísmo</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">Sistemas que funcionam independentemente de quem opera.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">📡</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Leitura contínua antes da reação</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">Reagir menos começa por enxergar mais.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">🛡️</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Responsabilidade técnica</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">A Yello assume responsabilidade pelo que implementa.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5)">
+          <span style="font-size:1.5rem">🔗</span>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1)">Parceria de longo prazo</p>
+            <p style="font-size:var(--text-sm);color:var(--text-secondary)">LTV saudável. Relações contínuas, evolução constante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     CORES
+     ================================================ -->
+<section class="section" id="cores">
+  <div class="container">
+    <p class="section-label reveal">02 — Cores</p>
+    <h2 class="section-title reveal">Paleta oficial.</h2>
+    <p class="section-desc reveal">Amarelo é energia, clareza e identidade. Preto é seriedade e contraste. Os acentos existem para comunicar estados e dar dinamismo pontual.</p>
+
+    <div style="margin-top: var(--space-12)">
+      <p class="section-label" style="color:var(--text-muted);margin-bottom:var(--space-4)">Primárias</p>
+      <div class="swatch-grid stagger-group" style="margin-bottom:var(--space-10)">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFD400"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Yellow Primary</div>
+            <div class="swatch-hex">#FFD400</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FBC501"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Yellow 500</div>
+            <div class="swatch-hex">#FBC501</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F4B301"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Yellow 600</div>
+            <div class="swatch-hex">#F4B301</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#CCA000"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Yellow 700</div>
+            <div class="swatch-hex">#CCA000</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#000000;border:1px solid rgba(255,255,255,0.1)"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Black</div>
+            <div class="swatch-hex">#000000</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#202020;border:1px solid rgba(255,255,255,0.1)"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Dark</div>
+            <div class="swatch-hex">#202020</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label" style="color:var(--text-muted);margin-bottom:var(--space-4)">Neutros</p>
+      <div class="swatch-grid stagger-group" style="margin-bottom:var(--space-10)">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.1)"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">White</div>
+            <div class="swatch-hex">#FFFFFF</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F5F5F7"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Gray 100</div>
+            <div class="swatch-hex">#F5F5F7</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#D7D7D7"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Gray 300</div>
+            <div class="swatch-hex">#D7D7D7</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#6E6E73"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Gray 500</div>
+            <div class="swatch-hex">#6E6E73</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label" style="color:var(--text-muted);margin-bottom:var(--space-4)">Acentos — Uso pontual</p>
+      <div class="swatch-grid stagger-group">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0060FF"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Blue</div>
+            <div class="swatch-hex">#0060FF</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#CC00FF"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Magenta</div>
+            <div class="swatch-hex">#CC00FF</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FF0072"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Pink</div>
+            <div class="swatch-hex">#FF0072</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FF8400"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Orange</div>
+            <div class="swatch-hex">#FF8400</div>
+            <div class="copy-tip" style="font-size:10px;color:var(--text-muted);opacity:0;transition:opacity 0.3s">Clique p/ copiar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TIPOGRAFIA
+     ================================================ -->
+<section class="section" id="tipografia">
+  <div class="container">
+    <p class="section-label reveal">03 — Tipografia</p>
+    <h2 class="section-title reveal">Syne + Inter.</h2>
+    <p class="section-desc reveal">Syne para títulos — geométrica, personalidade forte, presença visual. Inter para corpo — leitura impecável, padrão do mercado tech.</p>
+
+    <div style="margin-top: var(--space-12); display:flex; flex-direction:column; gap: var(--space-6)">
+
+      <div class="type-specimen stagger-group">
+        <div class="type-specimen-header">
+          <span class="type-specimen-label">Syne — Display / Títulos</span>
+          <span class="type-specimen-meta">font-weight: 800</span>
+        </div>
+        <div class="type-specimen-body">
+          <p style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1;letter-spacing:-0.02em;color:var(--text-primary)">Inteligência<br /><span style="color:var(--accent)">aplicada.</span></p>
+          <p style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:700;margin-top:var(--space-4);color:var(--text-secondary)">Heading 3XL — 1.875rem / 700</p>
+          <p style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;margin-top:var(--space-3);color:var(--text-secondary)">Heading 2XL — 1.5rem / 700</p>
+          <p style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;margin-top:var(--space-2);color:var(--text-secondary)">Heading XL — 1.25rem / 700</p>
+        </div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-specimen-header">
+          <span class="type-specimen-label">Inter — Body / UI</span>
+          <span class="type-specimen-meta">font-weight: 300–600</span>
+        </div>
+        <div class="type-specimen-body">
+          <p style="font-family:var(--font-body);font-size:var(--text-lg);font-weight:400;line-height:1.7;color:var(--text-secondary);margin-bottom:var(--space-4)">A Yello implementa inteligência operacional para empresas que precisam enxergar, organizar e escalar sem caos. Dados, automações e IA integrados à operação real.</p>
+          <p style="font-family:var(--font-body);font-size:var(--text-base);margin-bottom:var(--space-2);color:var(--text-secondary)">Body Base — 1rem / 400 — Texto corrido e descrições</p>
+          <p style="font-family:var(--font-body);font-size:var(--text-sm);font-weight:500;margin-bottom:var(--space-2);color:var(--text-muted)">Body SM — 0.875rem / 500 — Labels e legendas</p>
+          <p style="font-family:var(--font-body);font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">Overline — 0.75rem / 600 / Uppercase — Section labels</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     LOGO
+     ================================================ -->
+<section class="section" id="logo">
+  <div class="container">
+    <p class="section-label reveal">04 — Logo</p>
+    <h2 class="section-title reveal">A marca visual.</h2>
+    <p class="section-desc reveal">O mascote Dash integrado ao wordmark. Simples, memorável, funciona em qualquer escala.</p>
+
+    <div class="logo-usage-grid stagger-group" style="margin-top:var(--space-12)">
+      <div class="logo-box" style="background:var(--color-dark);">
+        <img src="assets/svg/logo-oficial.svg" alt="Logo fundo escuro" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--accent)\'>Yello</span>'" />
+        <span class="logo-box-label">Fundo escuro ✅</span>
+      </div>
+      <div class="logo-box" style="background:#FFD400;">
+        <img src="assets/svg/logo-oficial.svg" alt="Logo fundo amarelo" style="filter:invert(1)" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:#000\'>Yello</span>'" />
+        <span class="logo-box-label" style="color:#000">Fundo amarelo ✅</span>
+      </div>
+      <div class="logo-box" style="background:#FFFFFF;">
+        <img src="assets/svg/logo-oficial.svg" alt="Logo fundo branco" style="filter:invert(1)" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:#000\'>Yello</span>'" />
+        <span class="logo-box-label" style="color:#666">Fundo claro ✅</span>
+      </div>
+    </div>
+
+    <div class="divider" style="margin: var(--space-10) 0;"></div>
+
+    <p class="section-label" style="color:var(--text-muted)">Regras de uso</p>
+    <div class="do-dont-grid stagger-group" style="margin-top:var(--space-6)">
+      <div class="do-box">
+        <p class="do-label"><i data-lucide="check-circle" style="width:16px;height:16px"></i> Correto</p>
+        <ul style="font-size:var(--text-sm);color:var(--text-secondary);line-height:2;padding-left:var(--space-4)">
+          <li>Usar em fundo escuro, branco ou amarelo primário</li>
+          <li>Manter proporções originais do SVG</li>
+          <li>Respeitar área de proteção (mínimo 1x da altura ao redor)</li>
+          <li>Usar arquivo SVG para digital</li>
+          <li>Mínimo de 80px de largura em telas</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <p class="dont-label"><i data-lucide="x-circle" style="width:16px;height:16px"></i> Incorreto</p>
+        <ul style="font-size:var(--text-sm);color:var(--text-secondary);line-height:2;padding-left:var(--space-4)">
+          <li>Distorcer ou esticar a logo</li>
+          <li>Alterar as cores da logo</li>
+          <li>Usar em fundos de baixo contraste</li>
+          <li>Adicionar efeitos (sombra, brilho, gradiente)</li>
+          <li>Usar em tamanhos menores que 40px</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     DASH
+     ================================================ -->
+<section class="section" id="dash">
+  <div class="container">
+    <p class="section-label reveal">05 — Mascote</p>
+    <h2 class="section-title reveal">Dash, o camaleão.</h2>
+    <p class="section-desc reveal">Dash é a IA operacional do cliente. Observa → Sinaliza → Silencia. O camaleão representa adaptação, percepção e visão. Ele é o rosto da leitura contínua da Yello.</p>
+
+    <div class="dash-poses stagger-group" style="margin-top:var(--space-12)">
+      <div class="dash-pose-card">
+        <img src="assets/svg/dash-oficial.svg" alt="Dash Oficial" onerror="this.style.display='none'" />
+        <p class="dash-pose-name">Dash Oficial</p>
+        <p class="dash-pose-use">Versão principal. Usar em hero, apresentações e materiais institucionais.</p>
+      </div>
+      <div class="dash-pose-card">
+        <img src="assets/svg/dash-pose1.svg" alt="Dash Pose 1" onerror="this.style.display='none'" />
+        <p class="dash-pose-name">Pose 1 — Circular</p>
+        <p class="dash-pose-use">Versão compacta. Ideal para ícone de app, avatar e formatos quadrados.</p>
+      </div>
+      <div class="dash-pose-card">
+        <img src="assets/svg/dash-pose2.svg" alt="Dash Pose 2" onerror="this.style.display='none'" />
+        <p class="dash-pose-name">Pose 2</p>
+        <p class="dash-pose-use">Versão expressiva. Usar em seções de explicação e onboarding.</p>
+      </div>
+      <div class="dash-pose-card">
+        <img src="assets/svg/dash-pose3.svg" alt="Dash Pose 3" onerror="this.style.display='none'" />
+        <p class="dash-pose-name">Pose 3</p>
+        <p class="dash-pose-use">Versão relaxada. Usar em contextos de conteúdo, blog e educação.</p>
+      </div>
+    </div>
+
+    <div class="divider" style="margin: var(--space-10) 0;"></div>
+
+    <div class="do-dont-grid stagger-group">
+      <div class="do-box">
+        <p class="do-label"><i data-lucide="check-circle" style="width:16px;height:16px"></i> Dash pode</p>
+        <ul style="font-size:var(--text-sm);color:var(--text-secondary);line-height:2;padding-left:var(--space-4)">
+          <li>Aparecer como elemento visual de apoio</li>
+          <li>Representar a leitura contínua em ação</li>
+          <li>Ser usado em alertas, relatórios e dashboards</li>
+          <li>Aparecer no onboarding de clientes</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <p class="dont-label"><i data-lucide="x-circle" style="width:16px;height:16px"></i> Dash não pode</p>
+        <ul style="font-size:var(--text-sm);color:var(--text-secondary);line-height:2;padding-left:var(--space-4)">
+          <li>Ser usado como personagem "carismático" genérico</li>
+          <li>Aparecer em contextos fora da Yello</li>
+          <li>Ser deformado ou recolorido</li>
+          <li>Representar decisões estratégicas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     COMPONENTES
+     ================================================ -->
+<section class="section" id="componentes">
+  <div class="container">
+    <p class="section-label reveal">06 — Componentes</p>
+    <h2 class="section-title reveal">Os blocos de construção.</h2>
+
+    <!-- BOTÕES -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-4)">Botões</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center;padding:var(--space-8);background:var(--bg-secondary);border-radius:var(--radius-xl);border:1px solid var(--border)">
+      <button class="btn btn-primary">Primário</button>
+      <button class="btn btn-primary btn-sm">Primário SM</button>
+      <button class="btn btn-primary btn-lg">Primário LG</button>
+      <button class="btn btn-secondary">Secundário</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-primary" style="display:flex;gap:8px;align-items:center">
+        <i data-lucide="arrow-right" style="width:14px;height:14px"></i> Com ícone
+      </button>
+    </div>
+
+    <!-- BADGES -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-4)">Badges</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);padding:var(--space-8);background:var(--bg-secondary);border-radius:var(--radius-xl);border:1px solid var(--border)">
+      <span class="badge badge-yellow">Amarelo</span>
+      <span class="badge badge-blue">Azul</span>
+      <span class="badge badge-pink">Pink</span>
+      <span class="badge badge-magenta">Magenta</span>
+      <span class="badge badge-orange">Laranja</span>
+      <span class="badge badge-gray">Neutro</span>
+    </div>
+
+    <!-- CARDS -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-4)">Cards</p>
+    <div class="grid-3 stagger-group">
+      <div class="card">
+        <div class="card-icon"><i data-lucide="zap" style="width:20px;height:20px"></i></div>
+        <p class="card-title">Automação</p>
+        <p class="card-text">Processos repetitivos automatizados para liberar tempo da equipe e reduzir erro humano.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="bar-chart-2" style="width:20px;height:20px"></i></div>
+        <p class="card-title">Dados Estruturados</p>
+        <p class="card-text">Fontes conectadas e confiáveis. Decisões baseadas em sinal real, não em feeling.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="cpu" style="width:20px;height:20px"></i></div>
+        <p class="card-title">IA Aplicada</p>
+        <p class="card-text">Inteligência artificial integrada à operação real. Não como produto — como resultado.</p>
+      </div>
+    </div>
+
+    <!-- INPUTS -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-4)">Inputs</p>
+    <div style="display:flex;flex-direction:column;gap:var(--space-4);max-width:480px;padding:var(--space-8);background:var(--bg-secondary);border-radius:var(--radius-xl);border:1px solid var(--border)">
+      <input class="input" type="text" placeholder="Nome da empresa" />
+      <input class="input" type="email" placeholder="seu@email.com.br" />
+      <input class="input" type="text" placeholder="Input com foco ativo" autofocus />
+    </div>
+
+    <!-- ANIMAÇÕES -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-4)">Animações — Clique para demo</p>
+    <div class="grid-4 stagger-group">
+      <div class="anim-demo" data-anim="fade">
+        <span class="anim-label">Fade</span>
+        <span class="anim-target">Fade In</span>
+      </div>
+      <div class="anim-demo" data-anim="slide">
+        <span class="anim-label">Slide</span>
+        <span class="anim-target">Slide In</span>
+      </div>
+      <div class="anim-demo" data-anim="scale">
+        <span class="anim-label">Scale</span>
+        <span class="anim-target">Scale Up</span>
+      </div>
+      <div class="anim-demo" data-anim="stagger">
+        <span class="anim-label">Stagger</span>
+        <span class="anim-target">Stagger</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     APLICAÇÕES
+     ================================================ -->
+<section class="section" id="aplicacoes">
+  <div class="container">
+    <p class="section-label reveal">07 — Aplicações</p>
+    <h2 class="section-title reveal">A marca em uso.</h2>
+    <p class="section-desc reveal">Como a identidade visual se aplica nos diferentes pontos de contato da Yello Tech.</p>
+
+    <!-- CARTÃO DE VISITA -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-6)">Cartão de Visita</p>
+    <div style="display:flex;gap:var(--space-8);flex-wrap:wrap;align-items:flex-start">
+      <!-- Frente -->
+      <div>
+        <p style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">Frente</p>
+        <div class="mockup-business-card">
+          <div>
+            <img src="assets/svg/logo-oficial.svg" style="height:24px;width:auto" alt="Yello" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--accent)\'>Yello</span>'" />
+          </div>
+          <div>
+            <p style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base)">Thales Morais</p>
+            <p style="font-size:var(--text-xs);color:var(--accent);margin-top:2px">Founder & CTO</p>
+          </div>
+        </div>
+      </div>
+      <!-- Verso -->
+      <div>
+        <p style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)">Verso</p>
+        <div class="mockup-business-card" style="background:var(--accent);color:var(--color-black)">
+          <img src="assets/svg/dash-oficial.svg" style="height:60px;width:auto;opacity:0.3;position:absolute;bottom:-10px;right:var(--space-4)" alt="" />
+          <div></div>
+          <div>
+            <p style="font-size:var(--text-xs);font-weight:600;margin-bottom:var(--space-1)">yellotech.com.br</p>
+            <p style="font-size:var(--text-xs);color:rgba(0,0,0,0.6)">contato@yellotech.com.br</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-6)">Post Social Media — 1:1</p>
+    <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+      <div class="mockup-social" style="background:linear-gradient(135deg, #202020 0%, #2A2A2A 100%)">
+        <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle at top right,rgba(255,212,0,0.15),transparent 70%)"></div>
+        <img src="assets/svg/logo-oficial.svg" style="height:20px;margin-bottom:var(--space-8)" alt="" onerror="this.style.display='none'" />
+        <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;line-height:1.15;margin-bottom:var(--space-4)">Clareza antes<br />de escala.</p>
+        <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.6">Leitura contínua muda tudo. Não porque sua equipe trabalha mais — mas porque enxerga melhor.</p>
+        <div style="margin-top:auto;padding-top:var(--space-8);display:flex;align-items:center;gap:var(--space-2)">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--accent)"></div>
+          <span style="font-size:var(--text-xs);color:var(--accent);font-weight:600">yellotech.com.br</span>
+        </div>
+        <img src="assets/svg/dash-pose1.svg" style="position:absolute;bottom:-10px;right:var(--space-4);height:120px;opacity:0.8" alt="" onerror="this.style.display='none'" />
+      </div>
+    </div>
+
+    <!-- ASSINATURA DE EMAIL -->
+    <p class="section-label" style="color:var(--text-muted);margin:var(--space-10) 0 var(--space-6)">Assinatura de Email</p>
+    <div class="mockup-email-sig">
+      <table style="border-collapse:collapse;font-family:var(--font-body)">
+        <tr>
+          <td style="padding-right:var(--space-5);border-right:2px solid var(--accent);vertical-align:top">
+            <img src="assets/svg/logo-oficial.svg" style="height:28px;width:auto;display:block;margin-bottom:var(--space-2)" alt="Yello" onerror="this.outerHTML='<span style=\'font-family:sans-serif;font-weight:900;font-size:1.1rem;color:#FFD400\'>Yello</span>'" />
+            <img src="assets/svg/dash-oficial.svg" style="height:48px;width:auto" alt="Dash" onerror="this.style.display='none'" />
+          </td>
+          <td style="padding-left:var(--space-5);vertical-align:top">
+            <p style="font-weight:700;font-size:var(--text-sm);margin-bottom:2px">Thales Morais</p>
+            <p style="font-size:var(--text-xs);color:var(--accent);margin-bottom:var(--space-3)">Founder & CTO — Yello Tech</p>
+            <p style="font-size:var(--text-xs);color:var(--text-muted)">yellotech.com.br</p>
+            <p style="font-size:var(--text-xs);color:var(--text-muted)">contato@yellotech.com.br</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TOM DE VOZ
+     ================================================ -->
+<section class="section" id="tom">
+  <div class="container">
+    <p class="section-label reveal">08 — Tom de Voz</p>
+    <h2 class="section-title reveal">Direto. Técnico.<br />Sem ruído.</h2>
+    <p class="section-desc reveal">A Yello rejeita buzzwords, promessas vagas e discurso de agência. Fala pouco, executa bem, usa linguagem de quem entende de operação.</p>
+
+    <div style="margin-top:var(--space-12);display:flex;flex-direction:column;gap:var(--space-4)">
+      <div class="do-dont-grid stagger-group">
+        <div class="do-box">
+          <p class="do-label"><i data-lucide="check-circle" style="width:16px;height:16px"></i> Escreva assim</p>
+          <div class="example-text">
+            <p style="margin-bottom:var(--space-3)">"A Yello entra na operação, estrutura o que importa e acompanha a evolução."</p>
+            <p style="margin-bottom:var(--space-3)">"Detectei uma variação fora do padrão neste indicador."</p>
+            <p style="margin-bottom:var(--space-3)">"Não fechar também é sucesso quando evita erro."</p>
+            <p>"Implementação acima de discurso."</p>
+          </div>
+        </div>
+        <div class="dont-box">
+          <p class="dont-label"><i data-lucide="x-circle" style="width:16px;height:16px"></i> Nunca escreva assim</p>
+          <div class="example-text">
+            <p style="margin-bottom:var(--space-3)">"Revolucione sua empresa com o poder da Inteligência Artificial! 🚀🚀🚀"</p>
+            <p style="margin-bottom:var(--space-3)">"Parabéns pelo crescimento! Isso vai transformar seu negócio!"</p>
+            <p style="margin-bottom:var(--space-3)">"Somos especialistas em soluções inovadoras e disruptivas."</p>
+            <p>"ROI garantido desde o primeiro mês!"</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-8);margin-top:var(--space-4)">
+        <p class="section-label" style="color:var(--text-muted);margin-bottom:var(--space-4)">Atributos de personalidade da marca</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
+          <span class="badge badge-yellow">Técnico</span>
+          <span class="badge badge-yellow">Direto</span>
+          <span class="badge badge-yellow">Responsável</span>
+          <span class="badge badge-gray">Sem hype</span>
+          <span class="badge badge-gray">Sem buzzwords</span>
+          <span class="badge badge-gray">Honesto</span>
+          <span class="badge badge-gray">Confiável</span>
+          <span class="badge badge-gray">Estratégico</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border);">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-4)">
+    <div>
+      <img src="assets/svg/logo-oficial.svg" style="height:24px;margin-bottom:var(--space-2)" alt="Yello" onerror="this.outerHTML='<span style=\'font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--accent)\'>Yello</span>'" />
+      <p style="font-size:var(--text-xs);color:var(--text-muted)">Design System v1.0 — yellotech.com.br</p>
+    </div>
+    <p style="font-size:var(--text-xs);color:var(--text-muted)">© 2025 Yello Tech. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Init Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
